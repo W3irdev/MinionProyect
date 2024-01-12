@@ -1,0 +1,14 @@
+.wrapper{
+    background-color: #ddd;
+    display: grid;
+
+    grid-template-columns: 300px 300px 300px 300px;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+.align{
+    width: 20px;
+    height: 20px;
+}
