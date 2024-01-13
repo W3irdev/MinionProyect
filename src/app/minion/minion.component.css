@@ -2,13 +2,33 @@
     background-color: #ddd;
     display: grid;
 
-    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-columns: auto auto;
     gap: 20px;
     justify-content: center;
 
 }
 
-.align{
-    width: 20px;
-    height: 20px;
+svg{
+    margin-left: 3%;
 }
+
+.minions{
+        background-color: #ddd;
+        display: grid;
+    
+        grid-template-columns: 300px 300px 300px 300px;
+        gap: 20px;
+        justify-content: center;
+    
+    
+}
+
+.align{
+    width: 30px;
+    height: 30px;
+}
+
+.active{
+    background-color: blue;
+}
+
