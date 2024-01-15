@@ -25,4 +25,12 @@ export class MinionService {
     return this.http.put<Minion>(this.URL+"/"+minion.id,minion);
   }
 
+  createMinion(minion:Omit<Minion,"id">):Observable<Minion>{
+    return this.http.post<Minion>(this.URL,minion);
+  }
+
+  deleteMinion(minion:Minion):Observable<Minion>{
+    return this.http.delete<Minion>(this.URL+"/"+minion.id);
+  }
+
 }

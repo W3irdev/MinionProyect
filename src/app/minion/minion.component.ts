@@ -39,7 +39,7 @@ export class MinionComponent implements OnInit, OnChanges{
 
   }
 
-  goToInfo(id:string){
+  goToInfo(id:string|undefined){
     this.router.navigate(["minion", id]);
   }
 
@@ -50,6 +50,23 @@ export class MinionComponent implements OnInit, OnChanges{
       minion.like=true;
     }
     this.minionService.updateMinionById(minion).subscribe();
+  }
+
+  deleteMinion(minion:Minion){
+
+    try {
+      this.minionService.deleteMinion(minion).subscribe({next: (deleted) => {
+        let newMinions = this.minions.filter(oldMinion => oldMinion!==minion);
+        this.minions = newMinions;
+        
+      }});
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  editMinion(id:string|undefined){
+    this.router.navigate(["edit/minion/", id]);
   }
 
 }
