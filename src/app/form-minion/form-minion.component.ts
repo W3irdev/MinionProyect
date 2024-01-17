@@ -21,7 +21,7 @@ export class FormMinionComponent implements OnInit{
   }
   ngOnInit(): void {
     if(this.id){
-      this.minionService.getMinionById(this.id).subscribe({next: (minion) => this.minion=minion});
+      this.minionService.getMinionById(this.id).subscribe({next: (minion) => this.minion=minion[0]});
       this.status = "editing";
     }
   }

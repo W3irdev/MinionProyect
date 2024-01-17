@@ -1,10 +1,10 @@
 <div class="card" style="width: 18rem;">
-    <img src="{{minion.img}}" class="card-img-top" alt="...">
+    <img src="{{minion[0].img}}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{minion.name}}</h5>
-      <p class="card-text">{{minion.bio}}</p>
-      <p class="card-text">{{minion.birth}}</p>
-      <img *ngIf="minion.side=='de los buenos';else malos" class="align" src="../../assets/img/de los buenos.PNG" alt="">
+      <h5 class="card-title">{{minion[0].name}}</h5>
+      <p class="card-text">{{minion[0].bio}}</p>
+      <p class="card-text">{{minion[0].birth}}</p>
+      <img *ngIf="minion[0].side=='de los buenos';else malos" class="align" src="../../assets/img/de los buenos.PNG" alt="">
       <ng-template #malos><img class="align" src="../../assets/img/de los malos.PNG" alt=""></ng-template>
     </div>
   </div>

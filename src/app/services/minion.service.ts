@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map, switchMap } from 'rxjs';
 import { Minion } from '../../interface/minion';
 
 @Injectable({
@@ -17,8 +17,8 @@ export class MinionService {
   getMinion(name:string):Observable<Minion[]>{
     return this.http.get<Minion[]>(this.URL+"?name="+name);
   }
-  getMinionById(id:string):Observable<Minion>{
-    return this.http.get<Minion>(this.URL+"/"+id);
+  getMinionById(id:string):Observable<Minion[]>{
+    return this.http.get<Minion>(this.URL+"/"+id).pipe(map((minion)=> [minion]));
   }
 
   updateMinionById(minion:Minion):Observable<Minion>{
