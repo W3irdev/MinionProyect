@@ -29,12 +29,15 @@ export class MinionComponent implements OnInit, OnChanges{
   }
 
   @Input() searchTerm:string = '';
-
+  error: boolean = false;
   @Input() name:string = '';
   @Input() id:string = '';
   ngOnInit(): void {
   
-    if(!this.name) this.minionService.getMinions().subscribe({next: (minions) => this.minions=minions});
+    if(!this.name) this.minionService.getMinions().subscribe({
+       next: (minions) => {this.minions=minions;
+      this.error= true;},
+       error: ()=> this.error=true});
     
 
   }

@@ -1,5 +1,8 @@
 <div class="wrapper">
 
+  @if(error){
+      <h1>No se ha podido cargar los minions</h1>
+  }@else {
     <div class="minions">
 
       <div *ngFor="let minion of minions" class="card" style="width: 18rem;">
@@ -30,5 +33,8 @@
       <div class="info">
         <router-outlet></router-outlet>
       </div>
+  }
+
+    
 
 </div>
