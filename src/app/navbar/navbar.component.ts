@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Route, Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +10,13 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnChanges{
-  constructor(private route:Router){}
+  constructor(private route:Router, private router:ActivatedRoute){}
   ngOnChanges(changes: SimpleChanges): void {
+    this.router.params.subscribe({
+      next: (params) => {
+        this.term = params['search']
+      }
+    })
     console.log(this.term)
   }
 

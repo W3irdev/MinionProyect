@@ -17,7 +17,7 @@
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
                 </svg>
             </ng-template>
-              <a [routerLink]="['/minion/focus/', minion.id]" routerLinkActive="active"><img src="{{minion.img}}" class="card-img-top" alt="..."></a>
+              <a [routerLink]="['/minion/focus/', minion.id]" routerLinkActive="active"><img src="{{minion.img}}" class="card-img-top minion-img" alt="..."></a>
               <div class="card-body">
                 <h5 [routerLink]="['/minion/focus/', minion.id]" routerLinkActive="active" class="card-title">{{minion.name}}</h5>
                 <p class="card-text">{{minion.bio}}</p>

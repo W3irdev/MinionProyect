@@ -19,8 +19,14 @@ svg{
         grid-template-columns: 300px 300px 300px 300px;
         gap: 20px;
         justify-content: center;
+        align-items: end;
     
     
+}
+
+.minion-img{
+    height: 285px;
+    width: 285px;
 }
 
 .align{
